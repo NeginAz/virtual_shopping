@@ -1,0 +1,15 @@
+add_user negin azizi negneg 82312 100 buyer
+add_user negin azizi nadi 82312 100 buyer
+add_user negin azizi negneg 82312 100 seller
+add_user hoda barkh hood 100 34534 seller
+add_goods hood toop 30 30
+add_goods negneg toop 10 20
+search toop 2
+add_special negneg toop 4
+search toop 1
+request req1 negneg watch 3 hood; 
+request req2 negneg kif 2 hood;
+add_goods hood watch 6 6
+add_goods hood kif 4 9
+search kif 2 
+print_request negneg
