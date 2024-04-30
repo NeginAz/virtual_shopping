@@ -10,3 +10,5 @@ Buyers can request goods.
 After every sale, a factor is printed. 
 All requests can be printed as well. 
 All the factors can be printed. 
+
+
