@@ -11,4 +11,8 @@ After every sale, a factor is printed.
 All requests can be printed as well. 
 All the factors can be printed. 
 
+## Classes:
+For this project, 5 classes were designed. Person (buyer, seller), goods, factors, requests and the shop that entails all classes. 
+The file.txt includes some test cases. 
+
 
