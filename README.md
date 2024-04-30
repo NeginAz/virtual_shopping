@@ -6,8 +6,8 @@ Each user needs to sign up first and enter their first name, last name, username
 ### output: command ok/command failed
 
 Sellers can add goods, to the shop. 
-### add_goods seller_username goods_name goods_price goods_count
-### output: command ok/command failed
+##### add_goods seller_username goods_name goods_price goods_count
+##### output: command ok/command failed
 
 Users can search for goods in the shop.
 ### search goods_name goods_count
