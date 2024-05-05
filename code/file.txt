@@ -1,6 +1,6 @@
-add_user negin azizi negneg 82312 100 buyer
+add_user Smith Brown sbrown 82312 100 buyer
 add_user negin azizi nadi 82312 100 buyer
-add_user negin azizi negneg 82312 100 seller
+add_user Smith Brown sbrown 82312 100 seller
 add_user hoda barkh hood 100 34534 seller
 add_goods hood toop 30 30
 add_goods negneg toop 10 20
