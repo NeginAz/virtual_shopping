@@ -2,8 +2,8 @@ This project is an implementation of an online store.
 
 There are two types of users, sellers and buyers. 
 Each user needs to sign up first and enter their first name, last name, username, some money and whether they are sellers or buyers. 
-<!-- ###### *add_user first_name last_name username phone_number money seller/buyer*
-###### *output: command ok/command failed* --!>
+ ###### *add_user first_name last_name username phone_number money seller/buyer*
+###### *output: command ok/command failed* 
 
 Sellers can add goods, to the shop. 
 ###### *add_goods seller_username goods_name goods_price goods_count*
