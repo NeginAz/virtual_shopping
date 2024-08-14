@@ -111,6 +111,16 @@ This project consists of the following classes:
 * Requests
 * Shop (entails all other classes)
 
+### Design: 
+
+classDiagram
+    class BankAccount
+    BankAccount : +String owner
+    BankAccount : +Bigdecimal balance
+    BankAccount : +deposit(amount)
+    BankAccount : +withdrawal(amount)
+
+
 
 
 
