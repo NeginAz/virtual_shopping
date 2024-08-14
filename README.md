@@ -113,12 +113,26 @@ This project consists of the following classes:
 
 ### Design: 
 
-classDiagram
-    class BankAccount
-    BankAccount : +String owner
-    BankAccount : +Bigdecimal balance
-    BankAccount : +deposit(amount)
-    BankAccount : +withdrawal(amount)
+```mermaid
+Factor : -Person* buyer
+Factor : -vector<string> goods
+Factor : -vector<string> seller
+Factor : -vector<int>number
+Factor : -vector<int>price
+class Factor {
+Factor(Person* nbuyer);
+  void add_goods_to_factor(Goods* newgoods)
+  +string get_buyer_username()
+    +void  add_number(int num)
+  +string factor_get_goods(int i)
+  +int factor_get_goods_count(int i)
+  +string factor_get_goods_seller(int i)
+  +int factor_get_goods_price(int i)
+  +int factor_size()
+}
+
+```
+
 
 
 
