@@ -112,8 +112,8 @@ This project consists of the following classes:
 * Shop (entails all other classes)
 
 ### Design: 
-
 ```mermaid
+classDiagram
 Factor : -Person* buyer
 Factor : -vector<string> goods
 Factor : -vector<string> seller
