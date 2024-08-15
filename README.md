@@ -47,11 +47,9 @@ Factor : -vector ~int~ price
  Shop: -vector ~Request*~ requests
  Shop: -int shop_money
 class Request{
-  +Request(nreq_name, Person* nbuyer) 
   +add_request(goods_name,goods_count, seller_username)
   +get_request_name() String
   +get_req_buyer() String
-  +get_request_length() int
   +get_req_goods(i) String
   +get_req_count(i) int
   +get_req_seller(i) String
@@ -61,28 +59,17 @@ class Shop{
   -add_user(f_name,l_name, user, phone, money_s,flag_s)
   -add_goods(username, goods_name, sgoods_price, sgoods_count)
   -search_goods(goods_name,number)
-  - find_min_goods(vector ~int~ show_goods, index, number) int
   -sale(buyer_username,  goods_name,  seller_username)
   -special( seller_username,  goods_name,  goods_count)
-  -remove_special( seller_username,  goods_name,  goods_count)
-  -add_sale()
   -add_money( username, money)
   -buy(index, seller_username, goods_name, goods_count) int
-  -new_factor(buyer_username) int
   -add_to_factor(index,Goods* goods, goods_count)
   -add_bestseller()
   -search_persons(username,flag_s) int
-  -is_seller(username) int
-  -is_buyer(user) int
-  -search_sale()
   -add_goods_to_request(req_name, goods_name,  goods_count , seller_username)
   -new_request(req_name, buyer_username)
-  -print_request(buyer_username)
-  -print_factor(index)
   -get_index_factor(buyer_username)
   -check_request()
-  -benefit(price, shop_money, count) int
-  -find_min(vector ~int~ show_goods, index, number)
   -print_factor(buyer_username)
 }
 
@@ -90,29 +77,18 @@ class Factor {
 Factor(Person* nbuyer);
   +add_goods_to_factor(Goods* newgoods)
   +get_buyer_username() String
-  +add_number(num)
-  +factor_get_goods(i) String
-  +factor_get_goods_count(i) int
-  +factor_get_goods_seller( i) String
   +factor_get_goods_price(int i) int
-  +factor_size() int
 }
 
 class Person{
-  +Person(string f_name, string l_name, string user, string phone, int money_s, int flag_s)
   +get_username() String
-  +get_buyer_seller() int
   +set_buyer_seller()
   +add_money(x)
- -get_money() int
-  -get_phone_number() String
- -get_last_name() String
- -get_first_name() String
+  -get_money() int
 }
 
 
 class Goods{
-  +Goods(Person* sperson, sgoods_name,  sgoods_price,  sgoods_count)
   +get_goods_name() String
   +get_goods_count() int
   +get_goods_username() String
@@ -120,11 +96,8 @@ class Goods{
   +request_sale(buyer)
   +change_price(percentage)
   +change_count(number)
-  +Person* get_person_pointer()
   +set_special_tag(int a)
-  +get_special_tag() int  
   +get_best_seller_tag() int
-  +set_best_seller_tag(x)
 }
 
 
