@@ -115,7 +115,7 @@ This project consists of the following classes:
 ```mermaid
 classDiagram
 Factor : -Person* buyer
-Factor : -vector ~string>~ goods
+Factor : -vector ~string~ goods
 Factor : -vector ~string~ seller
 Factor : -vector ~int~ number
 Factor : -vector ~int~ price
@@ -126,7 +126,7 @@ Factor : -vector ~int~ price
  Goods : -int goods_count
  Goods : -int special
  Goods : -int best_seller_tag
- Goods : - vector ~string~ count_sale
+ Goods : -vector ~string~ count_sale
 
  Person: -string first_name
  Person: -string last_name
@@ -134,10 +134,6 @@ Factor : -vector ~int~ price
  Person: -string phone_number
  Person: -int money
  Person: -int flag
- Person: -int get_money()
- Person: -string get_phone_number()
- Person: -string get_last_name()
- Person: -string get_first_name()
 
  Request :-string req_name
  Request: -Person* buyer
@@ -150,80 +146,84 @@ Factor : -vector ~int~ price
  Shop: -vector ~Request*~ requests
  Shop: -int shop_money
 class Request{
-  +Request(string nreq_name, Person* nbuyer) 
-  +void add_request(string goods_name, int goods_count, string seller_username)
-  +string get_request_name()
-  +string get_req_buyer()
-  +int get_request_length()
-  +string get_req_goods(int i)
-  +int get_req_count(int i)
-  +string get_req_seller(int i)
+  +Request(nreq_name, Person* nbuyer) 
+  +add_request(goods_name,goods_count, seller_username)
+  +get_request_name() String
+  +get_req_buyer() String
+  +get_request_length() int
+  +get_req_goods(i) String
+  +get_req_count(i) int
+  +get_req_seller(i) String
 }
 
 class Shop{
- -void add_user(string f_name, string l_name, string user, string phone, int money_s, int flag_s)
-  -void add_goods(string username, string sgoods_name, int sgoods_price, int sgoods_count)
-  -void search_goods(string goods_name, int number)
-  -int find_min_goods(vector ~int~ show_goods,int index,int number)
-  -void sale(string buyer_username, string goods_name, string seller_username)
-  -void special(string seller_username, string goods_name, int goods_count)
-  -void remove_special(string seller_username, string goods_name, int goods_count)
-  -void add_sale()
-  -void add_money(string username,int money)
-  -int buy(int index,string seller_username, string goods_name, int goods_count)
-  -int new_factor(string buyer_username)
-  -void  add_to_factor(int index,Goods* goods, int goods_count)
-  -void  add_bestseller()
-  -int search_persons(string username,int flag_s)
-  -int is_seller(string username)
-  -int is_buyer(string user)
-  -void search_sale()
-  -void add_goods_to_request(string req_name, string goods_name, int goods_count , string seller_username)
-  -void new_request(string req_name, string buyer_username)
-  -void print_request(string buyer_username)
-  -void print_factor(int index)
-  -int get_index_factor(string buyer_username)
-  -void check_request()
-  -int benefit(int price, int shop_money, int count)
-  -int find_min(vector <int> show_goods,int index,int number)
-  -void print_factor(string buyer_username)
+  -add_user(f_name,l_name, user, phone, money_s,flag_s)
+  -add_goods(username, goods_name, sgoods_price, sgoods_count)
+  -search_goods(goods_name,number)
+  - find_min_goods(vector ~int~ show_goods, index, number) int
+  -sale(buyer_username,  goods_name,  seller_username)
+  -special( seller_username,  goods_name,  goods_count)
+  -remove_special( seller_username,  goods_name,  goods_count)
+  -add_sale()
+  -add_money( username, money)
+  -buy(index, seller_username, goods_name, goods_count) int
+  -new_factor(buyer_username) int
+  -add_to_factor(index,Goods* goods, goods_count)
+  -add_bestseller()
+  -search_persons(username,flag_s) int
+  -is_seller(username) int
+  -is_buyer(user) int
+  -search_sale()
+  -add_goods_to_request(req_name, goods_name,  goods_count , seller_username)
+  -new_request(req_name, buyer_username)
+  -print_request(buyer_username)
+  -print_factor(index)
+  -get_index_factor(buyer_username)
+  -check_request()
+  -benefit(price, shop_money, count) int
+  -find_min(vector ~int~ show_goods, index, number)
+  -print_factor(buyer_username)
 }
 
 class Factor {
 Factor(Person* nbuyer);
-  +void add_goods_to_factor(Goods* newgoods)
-  +string get_buyer_username()
-  +void  add_number(int num)
-  +string factor_get_goods(int i)
-  +int factor_get_goods_count(int i)
-  +string factor_get_goods_seller(int i)
-  +int factor_get_goods_price(int i)
-  +int factor_size()
+  +add_goods_to_factor(Goods* newgoods)
+  +get_buyer_username() String
+  +add_number(num)
+  +factor_get_goods(i) String
+  +factor_get_goods_count(i) int
+  +factor_get_goods_seller( i) String
+  +factor_get_goods_price(int i) int
+  +factor_size() int
 }
 
 class Person{
   +Person(string f_name, string l_name, string user, string phone, int money_s, int flag_s)
-  +string get_username()
-  +int get_buyer_seller()
-  +void set_buyer_seller()
-  +void add_money(int x)
+  +get_username() String
+  +get_buyer_seller() int
+  +set_buyer_seller()
+  +add_money(x)
+ -get_money() int
+  -get_phone_number() String
+ -get_last_name() String
+ -get_first_name() String
 }
 
 
 class Goods{
-  +Goods(Person* sperson, string sgoods_name, int sgoods_price, int sgoods_count)
-  +string get_goods_name()
-  +int get_goods_count()
-  +string get_goods_username()
-  +int get_goods_price()
-  +void request_sale(string buyer)
-  +void change_price(int percentage)
-  +void change_count(int number)
+  +Goods(Person* sperson, sgoods_name,  sgoods_price,  sgoods_count)
+  +get_goods_name() String
+  +get_goods_count() int
+  +get_goods_username() String
+  +get_goods_price() int
+  +request_sale(buyer)
+  +change_price(percentage)
+  +change_count(number)
   +Person* get_person_pointer()
-  +void set_special_tag(int a)
-  +int get_special_tag()
-  +int get_best_seller_tag()
-  +void set_best_seller_tag(int x)
+  +set_special_tag(int a)
+  +get_special_tag() int  
+  +get_best_seller_tag() int
+  +set_best_seller_tag(x)
 }
 
 
