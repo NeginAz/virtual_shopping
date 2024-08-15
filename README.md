@@ -115,10 +115,10 @@ This project consists of the following classes:
 ```mermaid
 classDiagram
 Factor : -Person* buyer
-Factor : -vector<string> goods
-Factor : -vector<string> seller
-Factor : -vector<int>number
-Factor : -vector<int>price
+Factor : -vector ~string>~ goods
+Factor : -vector ~string~ seller
+Factor : -vector ~int~ number
+Factor : -vector ~int~ price
 
  Goods : -Person* seller
  Goods : -string goods_name
@@ -126,7 +126,7 @@ Factor : -vector<int>price
  Goods : -int goods_count
  Goods : -int special
  Goods : -int best_seller_tag
- Goods : - vector <string> count_sale
+ Goods : - vector ~string~ count_sale
 
  Person: -string first_name
  Person: -string last_name
@@ -141,13 +141,13 @@ Factor : -vector<int>price
 
  Request :-string req_name
  Request: -Person* buyer
- Request: -vector<string>goods_names
- Request: -vector<int> goods_counts
- Request: -vector<string> seller_usernames
- Shop: -vector < Person*>persons
- Shop: -vector < Goods*>goods
- Shop: -vector <Factor*>factors
- Shop: -vector <Request*> requests
+ Request: -vector ~string~ goods_names
+ Request: -vector ~int~ goods_counts
+ Request: -vector ~string~ seller_usernames
+ Shop: -vector ~Person*~ persons
+ Shop: -vector ~Goods*~ goods
+ Shop: -vector ~Factor*~ factors
+ Shop: -vector ~Request*~ requests
  Shop: -int shop_money
 class Request{
   +Request(string nreq_name, Person* nbuyer) 
@@ -164,7 +164,7 @@ class Shop{
  -void add_user(string f_name, string l_name, string user, string phone, int money_s, int flag_s)
   -void add_goods(string username, string sgoods_name, int sgoods_price, int sgoods_count)
   -void search_goods(string goods_name, int number)
-  -int find_min_goods(vector <int> show_goods,int index,int number)
+  -int find_min_goods(vector ~int~ show_goods,int index,int number)
   -void sale(string buyer_username, string goods_name, string seller_username)
   -void special(string seller_username, string goods_name, int goods_count)
   -void remove_special(string seller_username, string goods_name, int goods_count)
