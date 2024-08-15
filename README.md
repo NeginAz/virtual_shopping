@@ -54,7 +54,7 @@ class Request{
   +get_req_count(i) int
   +get_req_seller(i) String
 }
-
+\n
 class Shop{
   -add_user(f_name,l_name, user, phone, money_s,flag_s)
   -add_goods(username, goods_name, sgoods_price, sgoods_count)
