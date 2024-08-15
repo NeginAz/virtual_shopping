@@ -46,15 +46,15 @@ Factor : -vector ~int~ price
  Shop: -vector ~Factor*~ factors
  Shop: -vector ~Request*~ requests
  Shop: -int shop_money
+
 class Request{
   +add_request(goods_name,goods_count, seller_username)
-  +get_request_name() String
   +get_req_buyer() String
   +get_req_goods(i) String
   +get_req_count(i) int
   +get_req_seller(i) String
 }
-\n
+
 class Shop{
   -add_user(f_name,l_name, user, phone, money_s,flag_s)
   -add_goods(username, goods_name, sgoods_price, sgoods_count)
@@ -64,12 +64,7 @@ class Shop{
   -add_money( username, money)
   -buy(index, seller_username, goods_name, goods_count) int
   -add_to_factor(index,Goods* goods, goods_count)
-  -add_bestseller()
-  -search_persons(username,flag_s) int
-  -add_goods_to_request(req_name, goods_name,  goods_count , seller_username)
   -new_request(req_name, buyer_username)
-  -get_index_factor(buyer_username)
-  -check_request()
   -print_factor(buyer_username)
 }
 
@@ -84,20 +79,16 @@ class Person{
   +get_username() String
   +set_buyer_seller()
   +add_money(x)
-  -get_money() int
 }
 
 
 class Goods{
   +get_goods_name() String
-  +get_goods_count() int
   +get_goods_username() String
   +get_goods_price() int
   +request_sale(buyer)
   +change_price(percentage)
   +change_count(number)
-  +set_special_tag(int a)
-  +get_best_seller_tag() int
 }
 
 
